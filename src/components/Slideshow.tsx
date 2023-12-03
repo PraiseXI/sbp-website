@@ -4,11 +4,16 @@ import { useKeenSlider } from "keen-slider/react";
 import Image from "next/legacy/image";
 
 const imageUrls = [
-  "https://picsum.photos/200/300",
-  "https://picsum.photos/300/200",
-  "https://picsum.photos/400/300",
-  "https://picsum.photos/500/400",
-  "https://picsum.photos/600/300",
+  "https://picsum.photos/2000/3000",
+  "https://picsum.photos/3000/2000",
+  "https://picsum.photos/4000/3000",
+  "https://picsum.photos/5000/4000",
+  "https://picsum.photos/5000/4000",
+  "https://picsum.photos/5000/4000",
+  "https://picsum.photos/5000/4000",
+  "https://picsum.photos/5000/4000",
+  "https://picsum.photos/5000/4000",
+  "https://picsum.photos/5000/4000",
 ];
 
 const Slideshow = () => {
