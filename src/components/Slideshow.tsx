@@ -1,21 +1,37 @@
-import React, { useEffect, useRef } from 'react';
-import 'keen-slider/keen-slider.min.css';
-import { useKeenSlider } from 'keen-slider/react';
+import React, { useState, useEffect, useRef } from "react";
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
+import Image from "next/legacy/image";
+
+const imageUrls = [
+  "https://picsum.photos/200/300",
+  "https://picsum.photos/300/200",
+  "https://picsum.photos/400/300",
+  "https://picsum.photos/500/400",
+  "https://picsum.photos/600/300",
+];
 
 const Slideshow = () => {
+  const [opacities, setOpacities] = useState(
+    new Array(imageUrls.length).fill(0)
+  );
+
   const [sliderRef, slider] = useKeenSlider({
+    slides: imageUrls.length,
     loop: true,
-    mode: 'snap',
-    renderMode: 'performance',
-    rubberband: true,
-    slides: {spacing: 10},
+    mode: "free",
+    renderMode: "performance",
     defaultAnimation: {
-      duration: 2000,
+      duration: 500,
+    },
+    detailsChanged(s) {
+      const new_opacities = s.track.details.slides.map(slide => slide.portion);
+      setOpacities(new_opacities);
     },
   });
 
   const timer = useRef<number>();
-  const interval = 5000; // Change slide every 5 seconds
+  const interval = 4000; // Change slide every 5 seconds
 
   useEffect(() => {
     timer.current = window.setInterval(() => {
@@ -32,10 +48,16 @@ const Slideshow = () => {
   }, [slider]);
 
   return (
-    <div ref={sliderRef} className="keen-slider" style={{ height: '100vh', width: '100vw' }}>
-      <div className="keen-slider__slide" style={{ backgroundColor: 'red' }}>1</div>
-      <div className="keen-slider__slide" style={{ backgroundColor: 'green' }}>2</div>
-      <div className="keen-slider__slide" style={{ backgroundColor: 'blue' }}>3</div>
+    <div ref={sliderRef} className="fader">
+      {imageUrls.map((src, idx) => (
+        <div
+          key={idx}
+          className="fader__slide"
+          style={{ opacity: opacities[idx] || 0 }}
+        >
+          <Image src={src} alt={`Slide ${idx + 1}`} layout="fill" objectFit="cover" />
+        </div>
+      ))}
     </div>
   );
 };
