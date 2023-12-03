@@ -21,6 +21,7 @@ const Slideshow = () => {
     loop: true,
     mode: "free",
     renderMode: "performance",
+    drag: false,
     defaultAnimation: {
       duration: 500,
     },
