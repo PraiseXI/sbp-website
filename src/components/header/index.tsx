@@ -2,9 +2,10 @@
 import React from "react";
 import styles from "./style.module.scss";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { opacity } from "./anim";
 import { useState } from "react";
+import Nav from "./nav";
 
 const Header: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
@@ -62,6 +63,9 @@ const Header: React.FC = () => {
           </div>
         </motion.div>
       </div>
+      <AnimatePresence mode="wait">
+      {isActive &&  <Nav />}
+      </AnimatePresence>
     </div>
   );
 };
