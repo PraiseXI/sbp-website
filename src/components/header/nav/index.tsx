@@ -14,7 +14,9 @@ export default function index() {
     >
       <div className={styles.wrapper}>
         <Body />
+        {/* Footer */}
       </div>
+      {/* Image */}
     </motion.div>
   );
 }
