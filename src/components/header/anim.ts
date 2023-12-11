@@ -1,4 +1,4 @@
-const transition = {duration: 1, ease: [0.76, 0, 0.24, 1]}
+const transition = {duration: 0.75, ease: [0.76, 0, 0.24, 1]}
 
 export const opacity = {
   intial: {
@@ -26,4 +26,20 @@ export const height = {
     height: 0,
     transition,
   },
+};
+export const translate = {
+  initial: {
+    y: "100%",
+    opacity: 0
+  },
+  enter: (i: number[]) => ({
+    y: 0,
+    opacity: 1,
+    transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: i[0]}
+  }),
+  exit: (i: number[]) => ({
+    y: "100%",
+    opacity: 0,
+    transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1]}
+})
 };
