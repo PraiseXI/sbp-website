@@ -1,7 +1,7 @@
 export default function Travel() {
     return (
         <div>
-            Hello
+            Travel
         </div>
     )
 }

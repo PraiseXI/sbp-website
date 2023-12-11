@@ -1,7 +1,7 @@
 export default function Portraits() {
     return (
         <div>
-            Hello
+            Portraits
         </div>
     )
 }
