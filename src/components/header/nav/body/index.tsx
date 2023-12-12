@@ -39,7 +39,6 @@ export default function index() {
    * @returns An array of JSX elements.
    */
   const getChars = (title: string): JSX.Element[] => {
-    console.log(translate);
     let chars: JSX.Element[] = [];
     title.split("").forEach((char, index) => {
       chars.push(
