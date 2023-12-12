@@ -36,11 +36,6 @@ export default function index() {
       href: "https://shotbypraise-store.vercel.app/",
       src: "prints.png",
     },
-    {
-      title: "Contact",
-      href: "/contact",
-      src: "contact.png",
-    },
   ];
 
   const getChars = (title: string): JSX.Element[] => {
