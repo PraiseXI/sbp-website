@@ -7,14 +7,9 @@ import { translate } from "../../anim";
 export default function index() {
   const links = [
     {
-      title: "Home",
-      href: "/",
-      src: "home.png",
-    },
-    {
-      title: "Portraits",
-      href: "/portraits",
-      src: "portraits.png",
+      title: "Projects",
+      href: "/projects",
+      src: "projects.png",
     },
     {
       title: "Travel",
@@ -22,19 +17,19 @@ export default function index() {
       src: "travel.png",
     },
     {
-      title: "Projects",
-      href: "/projects",
-      src: "projects.png",
-    },
-    {
-      title: "About",
-      href: "/about",
-      src: "about.png",
+      title: "Services",
+      href: "/services",
+      src: "portraits.png",
     },
     {
       title: "Prints",
       href: "https://shotbypraise-store.vercel.app/",
       src: "prints.png",
+    },
+    {
+      title: "About",
+      href: "/about",
+      src: "about.png",
     },
   ];
 
@@ -68,7 +63,7 @@ export default function index() {
       {links.map((link, index) => {
         const { title, href } = link;
         return (
-          <Link href={link} key={`l_${index}`}>
+          <Link href={href} key={`l_${index}`}>
             <p>{getChars(title)}</p>
           </Link>
         );
