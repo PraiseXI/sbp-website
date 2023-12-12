@@ -3,12 +3,17 @@ import React from "react";
 import styles from "./style.module.scss";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { opacity } from "./anim";
-import { useState } from "react";
+import { opacity, background } from "./anim";
+import { useState, useEffect } from "react";
 import Nav from "./nav";
+import { usePathname } from "next/navigation";
 
 const Header: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
+  const pathName = usePathname();
+  useEffect(() => {
+    setIsActive(false);
+  }, [pathName])
 
   return (
     <div className={styles.header}>
@@ -64,6 +69,7 @@ const Header: React.FC = () => {
           </div>
         </motion.div>
       </div>
+      <motion.div variants={background} initial="initial" animate={isActive ? "open" : "closed"} className={styles.background}></motion.div>
       {/* Render the Nav component when isActive is true */}
       <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </div>
