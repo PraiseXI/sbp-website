@@ -1,5 +1,11 @@
-const transition = { duration: 0.75, ease: [0.76, 0, 0.24, 1] };
+/**
+ * Defines animation properties for opacity, height, and translation.
+ */
+const transition = { duration: 0.50, ease: [0.76, 0, 0.24, 1] };
 
+/**
+ * Animation properties for opacity of the menu/closed text
+ */
 export const opacity = {
   intial: {
     opacity: 0,
@@ -14,6 +20,9 @@ export const opacity = {
   },
 };
 
+/**
+ * Animation properties for height of nav menu
+ */
 export const height = {
   initial: {
     height: 0,
@@ -28,6 +37,9 @@ export const height = {
   },
 };
 
+/**
+ * Animation properties for translation of text
+ */
 export const translate = {
   initial: {
     y: "100%",
@@ -36,11 +48,11 @@ export const translate = {
   enter: (i: number[]) => ({
     y: 0,
     opacity: 1,
-    transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: i[0] },
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: i[0] },
   }),
   exit: (i: number[]) => ({
     y: "100%",
     opacity: 0,
-    transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1] },
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: i[1] },
   }),
 };
