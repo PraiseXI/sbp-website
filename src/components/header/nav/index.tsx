@@ -1,12 +1,15 @@
+/**
+ * Renders the navigation component for the header.
+ */
 import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import { height } from "../anim";
 import Body from "./body";
 import { useState } from "react";
-import Image from "./image";
 import Footer from "./Footer";
 
 export default function index() {
+  // Define interfaces for Link and ImageProps
   interface Link {
     title: string;
     href: string;
@@ -17,6 +20,7 @@ export default function index() {
     isActive: boolean;
   }
 
+  // Define an array of links
   const links: Link[] = [
     {
       title: "Projects",
@@ -45,16 +49,19 @@ export default function index() {
     },
   ];
 
+  // Define the type for selectedLink state
   type SelectedLinkType = {
     isActive: boolean;
     index: number;
   };
 
+  // Initialize selectedLink state
   const [selectedLink, setSelectedLink] = useState<SelectedLinkType>({
     isActive: false,
     index: 0,
   });
 
+  // Render the navigation component
   return (
     <motion.div
       className={styles.nav}
