@@ -38,13 +38,18 @@ export default function index() {
     },
   ];
 
+  /**
+   * Returns an array of JSX elements representing each character in the title.
+   * @param title - The title string.
+   * @returns An array of JSX elements.
+   */
   const getChars = (title: string): JSX.Element[] => {
-    console.log(translate)
+    console.log(translate);
     let chars: JSX.Element[] = [];
     title.split("").forEach((char, index) => {
       chars.push(
         <motion.span
-          custom={[index * 0.02, (title.length - index) * 0.01 ]}
+          custom={[index * 0.02, (title.length - index) * 0.01]}
           variants={translate}
           initial="initial"
           animate="enter"
