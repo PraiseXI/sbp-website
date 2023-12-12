@@ -62,9 +62,9 @@ export default function index() {
       {links.map((link, index) => {
         const { title, href } = link;
         return (
-          <Link href={href} key={`l_${index}`}>
+          <a href={href} key={`l_${index}`}>
             <p>{getChars(title)}</p>
-          </Link>
+          </a>
         );
       })}
     </div>
