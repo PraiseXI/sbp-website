@@ -76,3 +76,17 @@ export const blur = {
     transition: { duration: 0.3 },
   },
 };
+
+export const background = {
+  initial: {
+      height: 0
+  },
+  open: {
+      height: "100vh",
+      transition
+  },
+  closed: {
+      height: 0,
+      transition
+  }
+}

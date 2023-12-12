@@ -6,8 +6,8 @@
     padding: 10px;
 
     .background{
-        background-color: black;
-        opacity: 0.5;
+        background-color: gray;
+        opacity: 0.3;
         height: 100%;
         width: 100%;
         position: absolute;
@@ -77,7 +77,7 @@
                     background-color: black;
                     position: relative;
                     display: block;
-                    transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+                    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
                 }
     
                 &::after{
@@ -120,9 +120,3 @@
         }
     }
 }
-
-@media (max-width: 600px) {
-    .header .contactContainer .contact-icon {
-      display: none;
-    }
-  }

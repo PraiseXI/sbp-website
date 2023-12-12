@@ -1,10 +1,10 @@
 import styles from "./style.module.scss";
 import React from "react";
 import Link from "next/link";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { translate, blur } from "../../anim";
 
-export default function index({ links, selectedLink, setSelectedLink }) {
+export default function index({ links, selectedLink, setSelectedLink }: any) {
   /**
    * Returns an array of JSX elements representing each character in the title.
    * @param title - The title string.
@@ -31,23 +31,37 @@ export default function index({ links, selectedLink, setSelectedLink }) {
 
   return (
     <div className={styles.body}>
-      {links.map((link, index) => {
+      {links.map((link: any, index: any) => {
         const { title, href } = link;
         return (
-          <a
+          <Link
             onMouseOver={() => {
-              setSelectedLink({ isActive: true, index })}}
+              setSelectedLink({ isActive: true, index });
+            }}
             onMouseLeave={() => {
-              setSelectedLink({ isActive: false, index })}}
+              setSelectedLink({ isActive: false, index });
+            }}
             onTouchStart={() => {
-              setSelectedLink({ isActive: true, index })}}
+              setSelectedLink({ isActive: true, index });
+            }}
             onTouchEnd={() => {
-              setSelectedLink({ isActive: false, index })}}
+              setSelectedLink({ isActive: false, index });
+            }}
             href={href}
             key={`l_${index}`}
           >
-            <motion.p variants={blur} initial="initial" animate={selectedLink.isActive && selectedLink.index != index ? "open" : "closed"}>{getChars(title)}</motion.p>
-          </a>
+            <motion.p
+              variants={blur}
+              initial="initial"
+              animate={
+                selectedLink.isActive && selectedLink.index != index
+                  ? "open"
+                  : "closed"
+              }
+            >
+              {getChars(title)}
+            </motion.p>
+          </Link>
         );
       })}
     </div>

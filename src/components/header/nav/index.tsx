@@ -3,12 +3,18 @@ import { motion } from "framer-motion";
 import { height } from "../anim";
 import Body from "./body";
 import { useState } from "react";
+import Image from "./image";
+import Footer from "./Footer";
 
 export default function index() {
   interface Link {
     title: string;
     href: string;
     src: string;
+  }
+  interface ImageProps {
+    src: String;
+    isActive: boolean;
   }
 
   const links: Link[] = [
@@ -25,7 +31,7 @@ export default function index() {
     {
       title: "Services",
       href: "/services",
-      src: "portraits.png",
+      src: "services.png",
     },
     {
       title: "Prints",
@@ -39,7 +45,15 @@ export default function index() {
     },
   ];
 
-  const [selectedLink, setSelectedLink] = useState({isActive: false, index: 0});
+  type SelectedLinkType = {
+    isActive: boolean;
+    index: number;
+  };
+
+  const [selectedLink, setSelectedLink] = useState<SelectedLinkType>({
+    isActive: false,
+    index: 0,
+  });
 
   return (
     <motion.div
@@ -51,11 +65,15 @@ export default function index() {
     >
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <Body links={links} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
-          {/* Footer */}
+          <Body
+            links={links}
+            selectedLink={selectedLink}
+            setSelectedLink={setSelectedLink}
+          />
+          <Footer />
         </div>
       </div>
-      {/* Image */}
+      <Image src={links[selectedLink.index].src} isActive={selectedLink.isActive}/>
     </motion.div>
   );
 }
