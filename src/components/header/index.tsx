@@ -15,6 +15,7 @@ const Header: React.FC = () => {
       <div className={styles.bar}>
         <Link href="/">SHOTBYPRAISE</Link>
 
+        {/* Toggle the isActive state when the element is clicked */}
         <div
           onClick={() => {
             setIsActive(!isActive);
@@ -27,6 +28,7 @@ const Header: React.FC = () => {
             }`}
           ></div>
           <div className={styles.label}>
+            {/* Animate the text based on the isActive state */}
             <motion.p
               variants={opacity}
               animate={!isActive ? "open" : "closed"}
@@ -52,9 +54,9 @@ const Header: React.FC = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <rect x="2" y="3" width="20" height="18" rx="2" ry="2"></rect>
               <line x1="2" y1="7" x2="22" y2="7"></line>
@@ -64,6 +66,7 @@ const Header: React.FC = () => {
           </div>
         </motion.div>
       </div>
+      {/* Render the Nav component when isActive is true */}
       <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </div>
   );
