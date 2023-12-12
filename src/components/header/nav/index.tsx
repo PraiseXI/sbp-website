@@ -10,7 +10,7 @@ export default function index() {
       variants={height}
       initial="initial"
       animate="enter"
-      exit="enter"
+      exit="exit"
     >
       <div className={styles.wrapper}>
         <Body />
