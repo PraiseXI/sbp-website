@@ -14,7 +14,7 @@ const Header: React.FC = () => {
     <div className={styles.header}>
       <div className={styles.bar}>
         <Link href="/">SHOTBYPRAISE</Link>
-        
+
         <div
           onClick={() => {
             setIsActive(!isActive);
@@ -41,10 +41,9 @@ const Header: React.FC = () => {
         
         <motion.div
           variants={opacity}
-          animate={!isActive ? "open" : "closed"}
-          className={styles.shopContainer}
+          className={styles.contactContainer}
         >
-          <p className={styles.shop}>Contact</p>
+          <p className={styles.contact}>Contact</p>
           <div className={styles.el}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

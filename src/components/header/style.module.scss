@@ -34,13 +34,13 @@
             left: 0;
         }
 
-        .shopContainer{
+        .contactContainer{
             display: flex;
             gap: 30px;
             position: absolute;
             right: 0;
 
-            .shop{
+            .contact{
                 display: none;
             }
         }
@@ -114,7 +114,7 @@
             font-size: 15px;
         }
 
-        .shopContainer{
+        .contactContainer{
             display: block;
             cursor: pointer;
         }
