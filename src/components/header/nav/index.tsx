@@ -73,7 +73,6 @@ export default function index() {
           <Footer />
         </div>
       </div>
-      <Image src={links[selectedLink.index].src} isActive={selectedLink.isActive}/>
     </motion.div>
   );
 }
