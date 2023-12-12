@@ -40,14 +40,12 @@ const Header: React.FC = () => {
             </motion.p>
           </div>
         </div>
-        
-        <motion.div
-          variants={opacity}
-          className={styles.contactContainer}
-        >
+
+        <motion.div variants={opacity} className={styles.contactContainer}>
           <p className={styles.contact}>Contact</p>
           <div className={styles.el}>
             <svg
+              className={styles["contact-icon"]}
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
