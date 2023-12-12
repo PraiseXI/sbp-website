@@ -15,24 +15,6 @@ export default function Footer() {
                 </motion.li>
             </ul>
             <ul>
-                <motion.li  
-                    custom={[0.3, 0]} 
-                    variants={translate} initial="initial" 
-                    animate="enter" 
-                    exit="exit">
-                    <span>Typography:</span> Google Fonts
-                </motion.li>
-            </ul>
-            <ul>
-                <motion.li
-                    custom={[0.3, 0]} 
-                    variants={translate} initial="initial" 
-                    animate="enter" 
-                    exit="exit">
-                    <span>Images:</span> Google
-                </motion.li>
-            </ul>
-            <ul>
                 <motion.li
                     custom={[0.3, 0]} 
                     variants={translate} initial="initial" 
