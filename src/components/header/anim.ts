@@ -1,13 +1,16 @@
 /**
  * Defines animation properties for opacity, height, and translation.
  */
-const transition = { duration: 0.50, ease: [0.76, 0, 0.24, 1] };
+const transition: { duration: number; ease: number[] } = {
+  duration: 0.5,
+  ease: [0.76, 0, 0.24, 1],
+};
 
 /**
  * Animation properties for opacity of the menu/closed text
  */
 export const opacity = {
-  intial: {
+  initial: {
     opacity: 0,
   },
   open: {
@@ -43,7 +46,7 @@ export const height = {
 export const translate = {
   initial: {
     y: "100%",
-    opacity: 0
+    opacity: 0,
   },
   enter: (i: number[]) => ({
     y: 0,
@@ -55,4 +58,21 @@ export const translate = {
     opacity: 0,
     transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: i[1] },
   }),
+};
+
+export const blur = {
+  initial: {
+    filter: "blur(0px)",
+    opacity: 1,
+  },
+  open: {
+    filter: "blur(4px)",
+    opacity: 0.6,
+    transition: { duration: 0.3 },
+  },
+  closed: {
+    filter: "blur(0px)",
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
 };
