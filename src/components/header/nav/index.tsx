@@ -39,7 +39,7 @@ export default function index() {
     },
     {
       title: "Prints",
-      href: "https://shotbypraise-store.vercel.app/",
+      href: "/shop",
       src: "prints.png",
     },
     {

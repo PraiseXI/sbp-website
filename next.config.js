@@ -16,6 +16,11 @@ const nextConfig = {
           destination: 'https://shotbypraise-store.vercel.app/',
           permanent: true,
         },
+        {
+          source: '/store',
+          destination: 'https://shotbypraise-store.vercel.app/',
+          permanent: true,
+        },
       ]
     },
   };
