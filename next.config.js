@@ -9,6 +9,15 @@ const nextConfig = {
         },
       ],
     },
+    async redirects() {
+      return [
+        {
+          source: '/shop',
+          destination: 'https://shotbypraise-store.vercel.app/',
+          permanent: true,
+        },
+      ]
+    },
   };
   
   module.exports = nextConfig;
