@@ -23,7 +23,8 @@
 @media only screen and (min-width: 1000px) {
    
     .body{
-        max-width: 2000px;
+        max-width: 1200px;
+        margin-top: 80px;
 
         p{
             font-size: 5vw;
@@ -31,24 +32,3 @@
         }
     }
 }
-
-@media only screen and (max-width: 500px) {
-    .body {
-      margin-top: 0;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0; // Remove any padding that may be affecting the width
-      padding-left: 30vw;
-  
-      p {
-        text-align: center;
-        font-size: 6vw; // Adjust the font size if necessary
-        padding-right: 60px; // Remove padding to ensure full width utilization
-        width: 100%; // Ensure each `p` tag takes the full width
-        justify-content: center; // Center the text within each `p` tag
-        padding-top: 40px; // Add padding to separate items if desired
-        padding-bottom: 40px; // Add padding to separate items if desired
-      }
-    }
-  }
