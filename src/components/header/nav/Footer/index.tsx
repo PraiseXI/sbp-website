@@ -14,22 +14,7 @@ export default function Footer() {
                     <span>Made by:</span> Praise Olawuni
                 </motion.li>
             </ul>
-            <ul>
-                <motion.li
-                    custom={[0.3, 0]} 
-                    variants={translate} initial="initial" 
-                    animate="enter" 
-                    exit="exit">
-                    Privacy Policy
-                </motion.li>
-                <motion.li 
-                    custom={[0.3, 0]} 
-                    variants={translate} initial="initial" 
-                    animate="enter" 
-                    exit="exit">
-                    Terms & Conditions
-                </motion.li>
-            </ul>
+
         </div>
     )
 }
