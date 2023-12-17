@@ -3,9 +3,7 @@
     position: sticky;
     width: 100%;
     box-sizing: border-box;
-    justify-content: center;
-    padding: 2rem;
-    min-height: 5rem;
+    padding: 10px;
 
     .background{
         background-color: gray;
@@ -74,7 +72,6 @@
                 display: flex;
                 align-items: center;
                 visibility: hidden;
-        
             }
 
             p{
@@ -85,7 +82,7 @@
             }
 
             .burger{
-                width: 52.5px;
+                width: 42.5px;
                 position: relative;
                 pointer-events: none;
     
@@ -101,7 +98,6 @@
                         height:1px;
                     }
                 }
-                
     
                 &::after{
                     top: -4px;
@@ -129,7 +125,7 @@
 }
 
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 600px) {
     .header{
         padding: 2rem;
 
