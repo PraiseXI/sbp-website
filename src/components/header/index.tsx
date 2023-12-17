@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   const pathName = usePathname();
   useEffect(() => {
     setIsActive(false);
-  }, [pathName])
+  }, [pathName]);
 
   return (
     <div className={styles.header}>
@@ -27,6 +27,7 @@ const Header: React.FC = () => {
           }}
           className={styles.el}
         >
+          <div className={styles.placeholder}></div>
           <div
             className={`${styles.burger} ${
               isActive ? styles.burgerActive : ""
@@ -46,30 +47,23 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        <motion.div variants={opacity} className={styles.contactContainer}>
-          <p className={styles.contact}>Contact</p>
+        <motion.div
+          variants={opacity}
+          animate={!isActive ? "open" : "closed"}
+          className={styles.contactContainer}
+        >
+          <Link href="/contact">Contact</Link>
           <div className={styles.el}>
-            <svg
-              className={styles["contact-icon"]}
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x="2" y="3" width="20" height="18" rx="2" ry="2"></rect>
-              <line x1="2" y1="7" x2="22" y2="7"></line>
-              <path d="M22 7l-10 7L2 7"></path>
-            </svg>
-            <p>Contact</p>
+            <div className={styles.placeholder}></div>
           </div>
         </motion.div>
       </div>
-      <motion.div variants={background} initial="initial" animate={isActive ? "open" : "closed"} className={styles.background}></motion.div>
+      <motion.div
+        variants={background}
+        initial="initial"
+        animate={isActive ? "open" : "closed"}
+        className={styles.background}
+      ></motion.div>
       {/* Render the Nav component when isActive is true */}
       <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </div>
