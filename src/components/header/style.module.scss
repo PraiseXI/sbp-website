@@ -1,8 +1,9 @@
 .header{
     background-color: #afafaf;
-    position: sticky;
+    position: fixed;
     width: 100%;
     box-sizing: border-box;
+    justify-content: center;
     padding: 2rem;
     min-height: 5rem;
 
@@ -35,14 +36,29 @@
             left: 0;
         }
 
+        .placeholder {
+            visibility: hidden;
+            width: 7rem;
+
+            @media (max-width: 600px) {
+                width: 4rem;
+            }
+        }
+
         .contactContainer{
             display: flex;
             gap: 30px;
             position: absolute;
             right: 0;
 
-            .contact{
-                display: none;
+
+            .placeholder {
+                visibility: hidden;
+                width: 6rem;
+
+                @media (max-width: 600px) {
+                    width: 3.5rem;
+                }
             }
         }
 
@@ -57,6 +73,8 @@
                 position: relative;
                 display: flex;
                 align-items: center;
+                visibility: hidden;
+        
             }
 
             p{
@@ -67,19 +85,23 @@
             }
 
             .burger{
-                width: 22.5px;
+                width: 52.5px;
                 position: relative;
                 pointer-events: none;
     
                 &::after, &::before{
                     content: "";
-                    height: 1px;
-                    width: 100%;
+                    height: 2px;
                     background-color: black;
                     position: relative;
                     display: block;
                     transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+
+                    @media (max-width: 600px) {
+                        height:1px;
+                    }
                 }
+                
     
                 &::after{
                     top: -4px;
@@ -107,7 +129,7 @@
 }
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 601px) {
     .header{
         padding: 2rem;
 
@@ -121,9 +143,3 @@
         }
     }
 }
-
-@media (max-width: 600px) {
-    .header .contactContainer .contact-icon {
-      display: none;
-    }
-  }
