@@ -38,17 +38,17 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh; // Makes it fill the entire height of the viewport
-      width: 100vw; // Makes it fill the entire width of the viewport
       padding: 0; // Remove any padding that may be affecting the width
+      padding-left: 30vw;
   
       p {
+        text-align: center;
         font-size: 6vw; // Adjust the font size if necessary
-        padding: 0; // Remove padding to ensure full width utilization
+        padding-right: 60px; // Remove padding to ensure full width utilization
         width: 100%; // Ensure each `p` tag takes the full width
         justify-content: center; // Center the text within each `p` tag
-        padding-top: 10px; // Add padding to separate items if desired
-        padding-bottom: 10px; // Add padding to separate items if desired
+        padding-top: 40px; // Add padding to separate items if desired
+        padding-bottom: 40px; // Add padding to separate items if desired
       }
     }
   }
