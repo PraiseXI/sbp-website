@@ -1,12 +1,12 @@
 .header{
-    background-color: #afafaf;
+    background-color: #000000;
     position: sticky;
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
 
     .background{
-        background-color: gray;
+        background-color: rgb(42, 55, 82);
         opacity: 0.3;
         height: 100%;
         width: 100%;
@@ -29,7 +29,7 @@
 
         a{
             text-decoration: none;
-            color: black;
+            color: #ebebeb;
             position: absolute;
             left: 0;
         }
@@ -89,7 +89,7 @@
                 &::after, &::before{
                     content: "";
                     height: 2px;
-                    background-color: black;
+                    background-color: rgb(255, 255, 255);
                     position: relative;
                     display: block;
                     transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
