@@ -110,3 +110,7 @@
   object-fit: contain;
   position: relative;
 }
+
+.body {
+  margin: 0px;
+}
