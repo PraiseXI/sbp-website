@@ -70,7 +70,12 @@ const Column = ({ images, y = 0 }: ColumnProps) => {
       {images.map((src: string, i: number) => {
         return (
           <div key={i} className={styles.imageContainer}>
-            <Image src={`/images/${src}`} alt="image" fill />
+            <Image 
+            src={`/images/${src}`} 
+            alt="image" 
+            fill
+            sizes="(max-width: 768px) 100vw, 700px"
+             />
           </div>
         );
       })}
