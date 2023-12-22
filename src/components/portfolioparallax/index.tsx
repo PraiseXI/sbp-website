@@ -40,14 +40,24 @@ export default function PortfolioParallax() {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
 
   useEffect(() => {
-    const lenis = new Lenis();
-
+    const lenisOptions = {
+      smoothTouch: true,
+      smoothWheel: true,
+      normalizeWheel: true,
+    };
+    
+    const lenis = new Lenis(lenisOptions);
+  
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
+  
     requestAnimationFrame(raf);
+  
+    return () => {
+      lenis.destroy(); // Clean up the lenis instance to prevent memory leaks
+    };
   }, []);
 
   return (
