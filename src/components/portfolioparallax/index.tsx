@@ -40,14 +40,24 @@ export default function PortfolioParallax() {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
 
   useEffect(() => {
-    const lenis = new Lenis();
-
+    const lenisOptions = {
+      smoothTouch: true,
+      smoothWheel: true,
+      normalizeWheel: true,
+    };
+    
+    const lenis = new Lenis(lenisOptions);
+  
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
+  
     requestAnimationFrame(raf);
+  
+    return () => {
+      lenis.destroy(); // Clean up the lenis instance to prevent memory leaks
+    };
   }, []);
 
   return (
@@ -56,6 +66,8 @@ export default function PortfolioParallax() {
       <div ref={container} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
+        <Column images={[images[6], images[7], images[8]]} y={y3}/>
+        <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
       <div className={styles.spacer}></div>
     </main>
