@@ -1,13 +1,13 @@
 .header{
-    background-color: rgb(45, 45, 45);
+    background-color: black;
     position: sticky;
     width: 100%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 25px;
 
     .background{
-        background-color: rgb(42, 55, 82);
-        opacity: 0.3;
+        background-color: white;
+        opacity: 0.9;
         height: 100%;
         width: 100%;
         position: absolute;
@@ -36,10 +36,10 @@
 
         .placeholder {
             visibility: hidden;
-            width: 7rem;
+            width: 2rem;
 
             @media (max-width: 600px) {
-                width: 4rem;
+                width: 2.5rem;
             }
         }
 
@@ -52,7 +52,7 @@
 
             .placeholder {
                 visibility: hidden;
-                width: 6rem;
+                width: 5rem;
 
                 @media (max-width: 600px) {
                     width: 3.5rem;
