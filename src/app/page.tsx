@@ -3,14 +3,16 @@ import styles from "./page.module.scss";
 import Slideshow from "../components/Slideshow";
 import Testimonials from "@/components/Testimonials";
 import PortfolioParallax from "../components/portfolioparallax/index";
+import Hero from "@/components/hero/index";
+
+const heroText = "SHOTBYPRAISE STUDIOS";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <p> HERO </p>
-      <p> ABOUT </p>
-      <PortfolioParallax />
-      HOMEPAGE
-    </main>
+      <div className="p-4 rounded-lg">
+        <Hero />
+        <PortfolioParallax />
+        HOMEPAGE
+      </div>
   );
 }
