@@ -9,7 +9,7 @@ const heroText = "SHOTBYPRAISE STUDIOS";
 
 export default function Home() {
   return (
-      <div className="p-4 rounded-lg">
+      <div className="p-2 rounded-lg">
         <Hero />
         <PortfolioParallax />
         HOMEPAGE
