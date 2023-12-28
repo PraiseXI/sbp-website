@@ -17,6 +17,11 @@ const nextConfig = {
           hostname: 'unsplash.com',
           pathname: '/*/*',
         },
+        {
+          protocol: 'https',
+          hostname: 'scsorwfvynangbrcaquf.supabase.co',
+          pathname: '/storage/v1/object/public/**/**',
+        },
       ],
     },
     async redirects() {
